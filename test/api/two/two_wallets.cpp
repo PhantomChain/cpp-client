@@ -1,10 +1,10 @@
 
 #include "gtest/gtest.h"
-#include "arkClient.h"
+#include "phantomClient.h"
 #include "utils/json.h"
 
 /* test_two_vote_identifier
- * https://dexplorer.ark.io:8443/api/v2/wallets/DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu
+ * https://dexplorer.phantom.org:8443/api/v2/wallets/DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu
  * Expected Response:
     {
     "data": {
@@ -18,7 +18,7 @@
  */
 TEST(api, test_two_wallet)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -44,7 +44,7 @@ TEST(api, test_two_wallet)
 }
 
 /* test_two_wallets
- * https://dexplorer.ark.io:8443/api/v2/wallets?limit=5&page=1
+ * https://dexplorer.phantom.org:8443/api/v2/wallets?limit=5&page=1
  * Expected Response:
     {
     "meta": {
@@ -70,7 +70,7 @@ TEST(api, test_two_wallet)
  */
 TEST(api, test_two_wallets)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -134,7 +134,7 @@ TEST(api, test_two_wallets)
  */
 TEST(api, test_two_wallets_search)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -172,7 +172,7 @@ TEST(api, test_two_wallets_search)
 }
 
 /* test_two_wallets_top_limit_page
- * https://dexplorer.ark.io:8443/api/v2/wallets/top?limit=5&page=1
+ * https://dexplorer.phantom.org:8443/api/v2/wallets/top?limit=5&page=1
  * Expected Response:
     {
     "meta": {
@@ -198,7 +198,7 @@ TEST(api, test_two_wallets_search)
  */
 TEST(api, test_two_wallets_top)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -234,7 +234,7 @@ TEST(api, test_two_wallets_top)
 }
 
 /* test_two_wallets_transactions
- * https://dexplorer.ark.io:8443/api/v2/wallets/DNv1iScT2DJBWzpJd1AFYkTx1xkAZ9XVJk/transactions?limit=2&page=1
+ * https://dexplorer.phantom.org:8443/api/v2/wallets/DNv1iScT2DJBWzpJd1AFYkTx1xkAZ9XVJk/transactions?limit=2&page=1
  * Expected Response:
   {
     "meta": {
@@ -269,7 +269,7 @@ TEST(api, test_two_wallets_top)
  */
 TEST(api, test_two_wallets_transactions)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -286,7 +286,7 @@ TEST(api, test_two_wallets_transactions)
 }
 
 /* test_two_wallets_transactions_received
- * https://dexplorer.ark.io:8443/api/v2/wallets/DNv1iScT2DJBWzpJd1AFYkTx1xkAZ9XVJk/transactions/received?limit=2&page=1
+ * https://dexplorer.phantom.org:8443/api/v2/wallets/DNv1iScT2DJBWzpJd1AFYkTx1xkAZ9XVJk/transactions/received?limit=2&page=1
  * Expected Response:
     {
     "meta": {
@@ -306,7 +306,7 @@ TEST(api, test_two_wallets_transactions)
  */
 TEST(api, test_two_wallets_transactions_received)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -329,7 +329,7 @@ TEST(api, test_two_wallets_transactions_received)
 }
 
 /* test_two_wallets_transactions_sent
- * https://dexplorer.ark.io:8443/api/v2/wallets/DNv1iScT2DJBWzpJd1AFYkTx1xkAZ9XVJk/transactions/sent?limit=2&page=1
+ * https://dexplorer.phantom.org:8443/api/v2/wallets/DNv1iScT2DJBWzpJd1AFYkTx1xkAZ9XVJk/transactions/sent?limit=2&page=1
  * Expected Response:
     {
     "meta": {
@@ -349,7 +349,7 @@ TEST(api, test_two_wallets_transactions_received)
  */
 TEST(api, test_two_wallets_transactions_sent)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
  
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -372,7 +372,7 @@ TEST(api, test_two_wallets_transactions_sent)
 }
 
 /* test_two_wallets_votes
- * https://dexplorer.ark.io:8443/api/v2/wallets/DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9/votes?limit=1&page=1
+ * https://dexplorer.phantom.org:8443/api/v2/wallets/DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9/votes?limit=1&page=1
  * Expected Response:
     {
     "meta": {
@@ -412,7 +412,7 @@ TEST(api, test_two_wallets_transactions_sent)
  */
 TEST(api, test_two_wallets_votes)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);

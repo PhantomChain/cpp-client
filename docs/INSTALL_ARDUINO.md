@@ -23,7 +23,7 @@ install the following Libraries
 ### Using with the Arduino IDE
 > include the following header in your Arduino Sketch:  
 ```cpp
-#include <arkClient.h>
+#include <phantomClient.h>
 ```
 
 #
@@ -31,7 +31,7 @@ install the following Libraries
 ### Arduino Example using the Adafruit Feather ESP8266
 
 ```cpp
-#include <arkClient.h>
+#include <phantomClient.h>
 #include <ESP8266WiFi.h>
 
 const char* ssid = "your_network";
@@ -46,21 +46,21 @@ void setup() {
   Serial.print("\nConnected, IP address: ");
   Serial.println(WiFi.localIP());
 
-  Ark::Client::Connection<Ark::Client::API::Two> connection(CustomNetwork);
+  Phantom::Client::Connection<Phantom::Client::API::Two> connection(CustomNetwork);
 
-  Serial.println(arkClient.blocks.all().c_str());
+  Serial.println(phantomClient.blocks.all().c_str());
   Serial.println();
   
-  Serial.println(arkClient.delegates.all().c_str());
+  Serial.println(phantomClient.delegates.all().c_str());
   Serial.println();
   
-  Serial.println(arkClient.delegates.count().c_str());
+  Serial.println(phantomClient.delegates.count().c_str());
   Serial.println();
   
-  Serial.println(arkClient.peers.all().c_str());
+  Serial.println(phantomClient.peers.all().c_str());
   Serial.println();
   
-  Serial.println(arkClient.transactions.all().c_str());
+  Serial.println(phantomClient.transactions.all().c_str());
   Serial.println();
 
 }

@@ -1,10 +1,10 @@
 
 #include "gtest/gtest.h"
-#include "arkClient.h"
+#include "phantomClient.h"
 #include "utils/json.h"
 
 /* test_two_node_configuration
- * https://dexplorer.ark.io:8443/api/v2/node/configuration
+ * https://dexplorer.phantom.org:8443/api/v2/node/configuration
  * Expected Response:
     {
     "data": {
@@ -14,8 +14,8 @@
         "explorer": "string",
         "version": int,
         "ports": {
-            "@arkecosystem\/core-p2p": "int",
-            "@arkecosystem\/core-api": "int"
+            "@phantomchain\/core-p2p": "int",
+            "@phantomchain\/core-api": "int"
         },
         "constants": {
             "height": uint64_t,
@@ -99,7 +99,7 @@
 */
 TEST(api, test_two_node_configuration)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.54", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.54", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -115,13 +115,13 @@ TEST(api, test_two_node_configuration)
     ASSERT_STREQ("2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867", nethash);
 
     const char* token = data["token"];
-    ASSERT_STREQ("DARK", token);
+    ASSERT_STREQ("DXPH", token);
 
     const char* symbol = data["symbol"];
-    ASSERT_STREQ("D\xD1\xA6", symbol);
+    ASSERT_STREQ("Dⓟ", symbol);
 
     const char* explorer = data["explorer"];
-    ASSERT_STREQ("https://dexplorer.ark.io", explorer);
+    ASSERT_STREQ("https://dexplorer.phantom.org", explorer);
 
     int version = data["version"];
     ASSERT_EQ(30, version);
@@ -129,15 +129,15 @@ TEST(api, test_two_node_configuration)
 
     JsonObject& ports = data["ports"];
 
-    int core_p2p = ports["@arkecosystem/core-p2p"];
+    int core_p2p = ports["@phantomchain/core-p2p"];
     ASSERT_EQ(4002, core_p2p);
 
-    int core_api = ports["@arkecosystem/core-api"];
+    int core_api = ports["@phantomchain/core-api"];
     ASSERT_EQ(4003, core_api);
 }
 
 /* test_two_node_status
- * https://dexplorer.ark.io:8443/api/v2/node/status
+ * https://dexplorer.phantom.org:8443/api/v2/node/status
  * Expected Response:
     {
         "data": {
@@ -149,7 +149,7 @@ TEST(api, test_two_node_configuration)
  */
 TEST(api, test_two_node_status)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.54", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.54", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -185,7 +185,7 @@ TEST(api, test_two_node_status)
  */
 TEST(api, test_two_node_syncing)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.54", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.54", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);

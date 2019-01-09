@@ -1,11 +1,11 @@
 {
-  "name": "Ark-Cpp-Client",
-  "keywords": "ark ecosystem, crypto, blockchain, arduino",
-  "description": "Cpp Wrapper for the Ark Ecosystem",
-  "homepage": "https://github.com/ArkEcosystem/Cpp-Client",
+  "name": "Phantom-Cpp-Client",
+  "keywords": "phantom, crypto, blockchain, arduino",
+  "description": "Cpp Wrapper for the PhantomChain",
+  "homepage": "https://github.com/PhantomChain/Cpp-Client",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ArkEcosystem/Cpp-Client.git"
+    "url": "https://github.com/PhantomChain/Cpp-Client.git"
   },
   "version": "0.1.0",
   "authors": [

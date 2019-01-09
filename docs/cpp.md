@@ -5,7 +5,7 @@ title: "Cpp"
 # Cpp
 
 ::: warning
-This package is still under development. This page will get more content as it evolves more. In the meantime you can view its source on [Github](https://github.com/ArkEcosystem/cpp-client/).
+This package is still under development. This page will get more content as it evolves more. In the meantime you can view its source on [Github](https://github.com/PhantomChain/cpp-client/).
 :::
 
 [[toc]]
@@ -20,7 +20,7 @@ This package is still under development. This page will get more content as it e
 
 The Cpp Client is meant to be used for creating request to an API endpoint.  
 For cryptography related functionality, such as generating addresses or creating transactions,  
-please see the [Cpp Crypto](https://github.com/ArkEcosystem/cpp-crypto) repository.
+please see the [Cpp Crypto](https://github.com/PhantomChain/cpp-crypto) repository.
 
 ### Connection
 
@@ -31,7 +31,7 @@ An example `Connection` that connects to a v2 API of a node, would be created as
 
 ```cpp
 // Create a connection
-Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.54", 4003);
+Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.54", 4003);
 ```
 
 ### Making an API Request
@@ -74,7 +74,7 @@ install the following Libraries:
 #### Arduino Example using the Adafruit Feather ESP8266
 
 ```Arduino
-#include <arkClient.h>
+#include <phantomClient.h>
 #include <ESP8266WiFi.h>
 
 const char* ssid = "your_network";
@@ -89,21 +89,21 @@ void setup() {
     Serial.print("\nConnected, IP address: ");
     Serial.println(WiFi.localIP());
 
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.54", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.54", 4003);
 
-    auto allBlocks = arkClient.blocks.all();
+    auto allBlocks = phantomClient.blocks.all();
     Serial.println(allBlocks.c_str());
 
-    auto allDelegates = arkClient.delegates.all();
+    auto allDelegates = phantomClient.delegates.all();
     Serial.println(allDelegates.c_str());
   
-    auto delegatesCount = arkClient.delegates.count();
+    auto delegatesCount = phantomClient.delegates.count();
     Serial.println(delegatesCount.c_str());
   
-    auto allPeers = arkClient.peers.all();
+    auto allPeers = phantomClient.peers.all();
     Serial.println(allPeers.c_str());
 
-    auto allTransactions = arkClient.transactions.all();
+    auto allTransactions = phantomClient.transactions.all();
     Serial.println(allTransactions.c_str());
 }
 
@@ -172,4 +172,4 @@ using
     cmake . && cmake --build .
 
 ### run tests
-    ./bin/Ark-Cpp-Client-tests
+    ./bin/Phantom-Cpp-Client-tests

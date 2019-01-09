@@ -1,11 +1,11 @@
 
 #include "gtest/gtest.h"
-#include "arkClient.h"
+#include "phantomClient.h"
 #include "utils/json.h"
 
 TEST(api, test_one_peers_peer)
 {
-    Ark::Client::Connection<Ark::Client::API::One> connection("5.196.105.32", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::One> connection("5.196.105.32", 4003);
 
     const auto peerResponse = connection.api.peers.get("46.105.160.104", 4001);
 
@@ -54,7 +54,7 @@ TEST(api, test_one_peers_peer)
 
 TEST(api, test_one_peers_peers)
 {
-    Ark::Client::Connection<Ark::Client::API::One> connection("5.196.105.32", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::One> connection("5.196.105.32", 4003);
 
     const auto peersResponse = connection.api.peers.all(5);
 
@@ -94,7 +94,7 @@ TEST(api, test_one_peers_peers)
 
 TEST(api, test_one_peers_version)
 {
-    Ark::Client::Connection<Ark::Client::API::One> connection("5.196.105.32", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::One> connection("5.196.105.32", 4003);
 
     const auto versionResponse = connection.api.peers.version();
 

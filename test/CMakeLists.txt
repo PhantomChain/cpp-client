@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.2.2)
 
-project(Ark-Cpp-Client-tests)
+project(Phantom-Cpp-Client-tests)
 
 hunter_add_package(GTest)
 
@@ -41,22 +41,22 @@ set(TEST_TWO_SRC
 	${PROJECT_SOURCE_DIR}/api/two/two_wallets.cpp
 )
 
-find_library(Ark-Cpp-Client-tests PUBLIC)
+find_library(Phantom-Cpp-Client-tests PUBLIC)
 
-add_executable(Ark-Cpp-Client-tests
+add_executable(Phantom-Cpp-Client-tests
 	${TEST_API_SRC}
 	${TEST_ONE_SRC}
 	${TEST_TWO_SRC}
 )
 
-target_link_libraries(Ark-Cpp-Client-tests Ark-Cpp-Client-lib GTest::gtest GTest::main)
+target_link_libraries(Phantom-Cpp-Client-tests Phantom-Cpp-Client-lib GTest::gtest GTest::main)
 
-add_test(NAME test COMMAND Ark-Cpp-Client-tests)
+add_test(NAME test COMMAND Phantom-Cpp-Client-tests)
 
 if (CMAKE_BUILD_TYPE STREQUAL "Coverage")
   include("${CMAKE_SOURCE_DIR}/cmake/CodeCoverage.cmake")
 
-  setup_target_for_coverage(${PROJECT_NAME}_coverage Ark-Cpp-Client-tests coverage)
+  setup_target_for_coverage(${PROJECT_NAME}_coverage Phantom-Cpp-Client-tests coverage)
 
   SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 -fprofile-arcs -ftest-coverage")
   SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -O0 -fprofile-arcs -ftest-coverage")

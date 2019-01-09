@@ -1,7 +1,7 @@
 /**
- * This file is part of Ark Cpp Client.
+ * This file is part of Phantom Cpp Client.
  *
- * (c) Ark Ecosystem <info@ark.io>
+ * (c) PhantomChain <info@phantom.org>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,10 @@
 #include <string>
 #include <cstring>
 
-namespace Ark {
+namespace Phantom {
 namespace Client {
 /***
- * Ark::Client::HTTP
+ * Phantom::Client::HTTP
  * @brief: Forward Delcaration
  **/
 class HTTP;
@@ -26,7 +26,7 @@ class HTTP;
 /***/
 
 /***
- * Ark::Client::AbstractHTTP
+ * Phantom::Client::AbstractHTTP
  *
  * The purpose of this class is to serve as an
  * entry point for integrating the HTTPClient
@@ -106,12 +106,12 @@ std::unique_ptr<AbstractHTTP> makeHTTP();
 };
 
 /***
- * Ark::Client::HTTP
+ * Phantom::Client::HTTP
  **/
-class Ark::Client::HTTP
+class Phantom::Client::HTTP
 {
 private:
-  std::unique_ptr<Ark::Client::AbstractHTTP> http;
+  std::unique_ptr<Phantom::Client::AbstractHTTP> http;
 
 public:
   HTTP() : http(makeHTTP()) { }

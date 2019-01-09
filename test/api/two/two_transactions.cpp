@@ -1,10 +1,10 @@
 
 #include "gtest/gtest.h"
-#include "arkClient.h"
+#include "phantomClient.h"
 #include "utils/json.h"
 
 /* test_two_transactions_transaction
- * https://dexplorer.ark.io:8443/api/v2/transactions/b324cea5c5a6c15e6ced3ec9c3135a8022eeadb8169f7ba66c80ebc82b0ac850
+ * https://dexplorer.phantom.org:8443/api/v2/transactions/b324cea5c5a6c15e6ced3ec9c3135a8022eeadb8169f7ba66c80ebc82b0ac850
  * Expected Response:
     {
     "data": {
@@ -32,7 +32,7 @@
  */
 TEST(api, test_two_transaction)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -85,7 +85,7 @@ TEST(api, test_two_transaction)
 }
 
 /* test_transactions_transaction_types
- * https://dexplorer.ark.io:8443/api/v2/transactions/types
+ * https://dexplorer.phantom.org:8443/api/v2/transactions/types
  * Expected Response:
     {
         "data": {
@@ -103,7 +103,7 @@ TEST(api, test_two_transaction)
  */
 TEST(api, test_transaction_types)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -144,7 +144,7 @@ TEST(api, test_transaction_types)
 }
 
 /* test_two_transactions_transaction_unconfirmed
- * https://dexplorer.ark.io:8443/api/v2/transactions/unconfirmed?id=4bbc5433e5a4e439369f1f57825e92d07cf9cb8e07aada69c122a2125e4b9d48
+ * https://dexplorer.phantom.org:8443/api/v2/transactions/unconfirmed?id=4bbc5433e5a4e439369f1f57825e92d07cf9cb8e07aada69c122a2125e4b9d48
  * Expected Response (if unconfirmed tx is not found):
     {
     "meta": {
@@ -164,7 +164,7 @@ TEST(api, test_transaction_types)
  */
 TEST(api, test_two_transaction_unconfirmed)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -187,7 +187,7 @@ TEST(api, test_two_transaction_unconfirmed)
 }
 
 /* test_two_transactions_transactions
- * https://dexplorer.ark.io:8443/api/v2/transactions?limit=2&page=1
+ * https://dexplorer.phantom.org:8443/api/v2/transactions?limit=2&page=1
  * Expected Response:
     {
     "meta": {
@@ -224,7 +224,7 @@ TEST(api, test_two_transaction_unconfirmed)
 #if 0
 TEST(api, test_two_transactions)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -257,7 +257,7 @@ TEST(api, test_two_transactions)
 #endif
 
 /* test_two_transactions_transactions_unconfirmed
- * https://dexplorer.ark.io:8443/api/v2/transactions/unconfirmed?limit=2&page=1
+ * https://dexplorer.phantom.org:8443/api/v2/transactions/unconfirmed?limit=2&page=1
  * Expected Response (if unconfirmed tx is not found):
     {
     "meta": {
@@ -277,7 +277,7 @@ TEST(api, test_two_transactions)
  */
 TEST(api, test_two_transactions_unconfirmed)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -305,7 +305,7 @@ TEST(api, test_two_transactions_unconfirmed)
  */
 TEST(api, test_two_transactions_search_all)
 {
-  Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+  Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
   auto apiVersion = connection.api.version();
   ASSERT_EQ(2, apiVersion);
@@ -364,7 +364,7 @@ TEST(api, test_two_transactions_search_all)
  */
 TEST(api, test_two_transactions_search)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);

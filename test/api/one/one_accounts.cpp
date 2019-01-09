@@ -1,18 +1,18 @@
 
 #include "gtest/gtest.h"
-#include "arkClient.h"
+#include "phantomClient.h"
 #include "utils/json.h"
 
 namespace
 {
-    const auto arkAddress = "AeLpRK8rFVtBeyBVqBtdQpWDfLzaiNujKr"; // genesis_1
+    const auto phantomAddress = "AeLpRK8rFVtBeyBVqBtdQpWDfLzaiNujKr"; // genesis_1
 }
 
 TEST(api, test_one_accounts_account)
 {
-    Ark::Client::Connection<Ark::Client::API::One> connection("5.196.105.32", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::One> connection("5.196.105.32", 4003);
 
-    const auto accountResponse = connection.api.accounts.get(arkAddress);
+    const auto accountResponse = connection.api.accounts.get(phantomAddress);
 
     DynamicJsonBuffer jsonBuffer(accountResponse.size());
     JsonObject& root = jsonBuffer.parseObject(accountResponse);
@@ -44,9 +44,9 @@ TEST(api, test_one_accounts_account)
 
 TEST(api, test_one_accounts_balance)
 {
-    Ark::Client::Connection<Ark::Client::API::One> connection("5.196.105.32", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::One> connection("5.196.105.32", 4003);
 
-    const auto accountBalanceResponse = connection.api.accounts.balance(arkAddress);
+    const auto accountBalanceResponse = connection.api.accounts.balance(phantomAddress);
 
     DynamicJsonBuffer jsonBuffer(accountBalanceResponse.size());
     JsonObject& root = jsonBuffer.parseObject(accountBalanceResponse);
@@ -63,9 +63,9 @@ TEST(api, test_one_accounts_balance)
 
 TEST(api, test_one_accounts_delegates)
 {
-    Ark::Client::Connection<Ark::Client::API::One> connection("5.196.105.32", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::One> connection("5.196.105.32", 4003);
 
-    const auto delegateResponse = connection.api.accounts.delegates(arkAddress);
+    const auto delegateResponse = connection.api.accounts.delegates(phantomAddress);
 
     DynamicJsonBuffer jsonBuffer(delegateResponse.size());
     JsonObject& root = jsonBuffer.parseObject(delegateResponse);
@@ -102,9 +102,9 @@ TEST(api, test_one_accounts_delegates)
 
 TEST(api, test_one_accounts_delegates_fee)
 {
-    Ark::Client::Connection<Ark::Client::API::One> connection("5.196.105.32", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::One> connection("5.196.105.32", 4003);
 
-    const auto delegatesFeeResponse = connection.api.accounts.delegatesFee(arkAddress);
+    const auto delegatesFeeResponse = connection.api.accounts.delegatesFee(phantomAddress);
 
     DynamicJsonBuffer jsonBuffer(delegatesFeeResponse.size());
     JsonObject& root = jsonBuffer.parseObject(delegatesFeeResponse);
@@ -118,9 +118,9 @@ TEST(api, test_one_accounts_delegates_fee)
 
 TEST(api, test_one_accounts_public_key)
 {
-    Ark::Client::Connection<Ark::Client::API::One> connection("5.196.105.32", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::One> connection("5.196.105.32", 4003);
 
-    const auto pubkeyResponse = connection.api.accounts.publickey(arkAddress);
+    const auto pubkeyResponse = connection.api.accounts.publickey(phantomAddress);
 
     DynamicJsonBuffer jsonBuffer(pubkeyResponse.size());
     JsonObject& root = jsonBuffer.parseObject(pubkeyResponse);

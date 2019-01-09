@@ -12,7 +12,7 @@
     #include <HTTPClient.h>
 #endif
 
-namespace Ark {
+namespace Phantom {
 namespace Client {
 namespace {
 

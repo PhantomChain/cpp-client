@@ -1,7 +1,7 @@
 /**
- * This file is part of Ark Cpp Client.
+ * This file is part of Phantom Cpp Client.
  *
- * (c) Ark Ecosystem <info@ark.io>
+ * (c) PhantomChain <info@phantom.org>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,10 @@
 #include "api/two/two_api.h"
 #include "http/http.h"
 
-namespace Ark {
+namespace Phantom {
 namespace Client {
 /**
- * Ark::Client::Connection<TAPI>
+ * Phantom::Client::Connection<TAPI>
  **/
 template <typename TAPI>
 class Connection {

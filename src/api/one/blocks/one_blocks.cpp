@@ -6,10 +6,10 @@
 /**
  * /api/blocks/get?id=_blockID
  **/
-std::string Ark::Client::API::ONE::Blocks::get(const char *const blockId)
+std::string Phantom::Client::API::ONE::Blocks::get(const char *const blockId)
 {
   char uri[80] = { '\0' };
-  snprintf(uri, sizeof(uri), "%s?id=%s", Ark::Client::API::ONE::Paths::Blocks::get, blockId);
+  snprintf(uri, sizeof(uri), "%s?id=%s", Phantom::Client::API::ONE::Paths::Blocks::get, blockId);
   return http_.get(uri);
 }
 /**/
@@ -19,7 +19,7 @@ std::string Ark::Client::API::ONE::Blocks::get(const char *const blockId)
 /**
  * /api/blocks?orderBy=height:desc&limit=10
  **/
-std::string Ark::Client::API::ONE::Blocks::all(
+std::string Phantom::Client::API::ONE::Blocks::all(
   const char *const orderBy /* = "height" */,
   bool isDescending /* = true */,
   int limit /* = 10 */
@@ -29,7 +29,7 @@ std::string Ark::Client::API::ONE::Blocks::all(
     uri,
     sizeof(uri),
     "%s?orderBy=%s:%s&limit=%d",
-    Ark::Client::API::ONE::Paths::Blocks::base,
+    Phantom::Client::API::ONE::Paths::Blocks::base,
     orderBy,
     isDescending ? "desc" : "asc",
     limit
@@ -43,9 +43,9 @@ std::string Ark::Client::API::ONE::Blocks::all(
 /**
  * /api/blocks/getEpoch
  **/
-std::string Ark::Client::API::ONE::Blocks::epoch()
+std::string Phantom::Client::API::ONE::Blocks::epoch()
 {
-    return http_.get(Ark::Client::API::ONE::Paths::Blocks::epoch);
+    return http_.get(Phantom::Client::API::ONE::Paths::Blocks::epoch);
 }
 /**/
 
@@ -54,9 +54,9 @@ std::string Ark::Client::API::ONE::Blocks::epoch()
 /**
  * /api/blocks/getFee
  **/
-std::string Ark::Client::API::ONE::Blocks::fee()
+std::string Phantom::Client::API::ONE::Blocks::fee()
 {
-    return http_.get(Ark::Client::API::ONE::Paths::Blocks::fee);
+    return http_.get(Phantom::Client::API::ONE::Paths::Blocks::fee);
 }
 /**/
 
@@ -65,9 +65,9 @@ std::string Ark::Client::API::ONE::Blocks::fee()
 /**
  * /api/blocks/getFees
  **/
-std::string Ark::Client::API::ONE::Blocks::fees()
+std::string Phantom::Client::API::ONE::Blocks::fees()
 {
-    return http_.get(Ark::Client::API::ONE::Paths::Blocks::fees);
+    return http_.get(Phantom::Client::API::ONE::Paths::Blocks::fees);
 }
 /**/
 
@@ -76,9 +76,9 @@ std::string Ark::Client::API::ONE::Blocks::fees()
 /**
  * /api/blocks/getHeight
  **/
-std::string Ark::Client::API::ONE::Blocks::height()
+std::string Phantom::Client::API::ONE::Blocks::height()
 {
-    return http_.get(Ark::Client::API::ONE::Paths::Blocks::height);
+    return http_.get(Phantom::Client::API::ONE::Paths::Blocks::height);
 }
 /**/
 
@@ -87,9 +87,9 @@ std::string Ark::Client::API::ONE::Blocks::height()
 /**
  * /api/blocks/getMilestone
  **/
-std::string Ark::Client::API::ONE::Blocks::milestone()
+std::string Phantom::Client::API::ONE::Blocks::milestone()
 {
-    return http_.get(Ark::Client::API::ONE::Paths::Blocks::milestone);
+    return http_.get(Phantom::Client::API::ONE::Paths::Blocks::milestone);
 }
 /**/
 
@@ -98,9 +98,9 @@ std::string Ark::Client::API::ONE::Blocks::milestone()
 /**
  * /api/blocks/getNethash
  **/
-std::string Ark::Client::API::ONE::Blocks::nethash()
+std::string Phantom::Client::API::ONE::Blocks::nethash()
 {
-    return http_.get(Ark::Client::API::ONE::Paths::Blocks::nethash);
+    return http_.get(Phantom::Client::API::ONE::Paths::Blocks::nethash);
 }
 /**/
 
@@ -109,9 +109,9 @@ std::string Ark::Client::API::ONE::Blocks::nethash()
 /**
  * /api/blocks/getReward
  **/
-std::string Ark::Client::API::ONE::Blocks::reward()
+std::string Phantom::Client::API::ONE::Blocks::reward()
 {
-    return http_.get(Ark::Client::API::ONE::Paths::Blocks::reward);
+    return http_.get(Phantom::Client::API::ONE::Paths::Blocks::reward);
 }
 /**/
 
@@ -120,9 +120,9 @@ std::string Ark::Client::API::ONE::Blocks::reward()
 /**
  * /api/blocks/getSupply
  **/
-std::string Ark::Client::API::ONE::Blocks::supply()
+std::string Phantom::Client::API::ONE::Blocks::supply()
 {
-    return http_.get(Ark::Client::API::ONE::Paths::Blocks::supply);
+    return http_.get(Phantom::Client::API::ONE::Paths::Blocks::supply);
 }
 /**/
 
@@ -131,8 +131,8 @@ std::string Ark::Client::API::ONE::Blocks::supply()
 /**
  * /api/blocks/getStatus
  **/
-std::string Ark::Client::API::ONE::Blocks::status()
+std::string Phantom::Client::API::ONE::Blocks::status()
 {
-    return http_.get(Ark::Client::API::ONE::Paths::Blocks::status);
+    return http_.get(Phantom::Client::API::ONE::Paths::Blocks::status);
 }
 /**/

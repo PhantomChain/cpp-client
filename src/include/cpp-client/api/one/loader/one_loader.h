@@ -1,7 +1,7 @@
 /**
- * This file is part of Ark Cpp Client.
+ * This file is part of Phantom Cpp Client.
  *
- * (c) Ark Ecosystem <info@ark.io>
+ * (c) PhantomChain <info@phantom.org>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +14,7 @@
 #include "api/one/one_paths.h"
 #include <string>
 
-namespace Ark {
+namespace Phantom {
 namespace Client {
 namespace API {
 namespace ONE {

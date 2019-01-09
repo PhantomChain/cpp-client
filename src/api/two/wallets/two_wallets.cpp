@@ -3,41 +3,41 @@
 
 #include <cstdio>
 
-std::string Ark::Client::API::TWO::Wallets::get(
+std::string Phantom::Client::API::TWO::Wallets::get(
   const char *const identifier,
   int limit /* = 5 */,
   int page /* = 1 */
 ) {
   char uri[128] = { };
-  snprintf(uri, sizeof(uri), "%s/%s?limit=%d&page=%d", Ark::Client::API::TWO::Paths::Wallets::base, identifier, limit, page);
+  snprintf(uri, sizeof(uri), "%s/%s?limit=%d&page=%d", Phantom::Client::API::TWO::Paths::Wallets::base, identifier, limit, page);
   return http_.get(uri);
 }
 
 /***/
 
-std::string Ark::Client::API::TWO::Wallets::all(
+std::string Phantom::Client::API::TWO::Wallets::all(
   int limit /* = 5 */,
   int page /* = 1 */
 ) {
   char uri[128] = { };
-  snprintf(uri, sizeof(uri), "%s?limit=%d&page=%d", Ark::Client::API::TWO::Paths::Wallets::base, limit, page);
+  snprintf(uri, sizeof(uri), "%s?limit=%d&page=%d", Phantom::Client::API::TWO::Paths::Wallets::base, limit, page);
   return http_.get(uri);
 }
 
 /***/
 
-std::string Ark::Client::API::TWO::Wallets::top(
+std::string Phantom::Client::API::TWO::Wallets::top(
   int limit /* = 5 */,
   int page /* = 1 */
 ) {
   char uri[128] = { };
-  snprintf(uri, sizeof(uri), "%s?limit=%d&page=%d", Ark::Client::API::TWO::Paths::Wallets::top, limit, page);
+  snprintf(uri, sizeof(uri), "%s?limit=%d&page=%d", Phantom::Client::API::TWO::Paths::Wallets::top, limit, page);
   return http_.get(uri);
 }
 
 /***/
 
-std::string Ark::Client::API::TWO::Wallets::transactions(
+std::string Phantom::Client::API::TWO::Wallets::transactions(
   const char *const identifier,
   int limit /* = 5 */,
   int page /* = 1 */
@@ -47,7 +47,7 @@ std::string Ark::Client::API::TWO::Wallets::transactions(
     uri,
     sizeof(uri),
     "%s/%s/transactions?limit=%d&page=%d",
-    Ark::Client::API::TWO::Paths::Wallets::base,
+    Phantom::Client::API::TWO::Paths::Wallets::base,
     identifier,
     limit,
     page
@@ -57,7 +57,7 @@ std::string Ark::Client::API::TWO::Wallets::transactions(
 
 /***/
 
-std::string Ark::Client::API::TWO::Wallets::transactionsSent(
+std::string Phantom::Client::API::TWO::Wallets::transactionsSent(
   const char *const identifier,
   int limit /* = 5 */,
   int page /* = 1 */
@@ -67,7 +67,7 @@ std::string Ark::Client::API::TWO::Wallets::transactionsSent(
     uri,
     sizeof(uri),
     "%s/%s/transactions/sent?limit=%d&page=%d",
-    Ark::Client::API::TWO::Paths::Wallets::base,
+    Phantom::Client::API::TWO::Paths::Wallets::base,
     identifier,
     limit,
     page
@@ -77,7 +77,7 @@ std::string Ark::Client::API::TWO::Wallets::transactionsSent(
 
 /***/
 
-std::string Ark::Client::API::TWO::Wallets::transactionsReceived(
+std::string Phantom::Client::API::TWO::Wallets::transactionsReceived(
   const char *const identifier,
   int limit /* = 5 */,
   int page /* = 1 */
@@ -87,7 +87,7 @@ std::string Ark::Client::API::TWO::Wallets::transactionsReceived(
     uri,
     sizeof(uri),
     "%s/%s/transactions/received?limit=%d&page=%d",
-    Ark::Client::API::TWO::Paths::Wallets::base,
+    Phantom::Client::API::TWO::Paths::Wallets::base,
     identifier,
     limit,
     page
@@ -97,7 +97,7 @@ std::string Ark::Client::API::TWO::Wallets::transactionsReceived(
 
 /***/
 
-std::string Ark::Client::API::TWO::Wallets::votes(
+std::string Phantom::Client::API::TWO::Wallets::votes(
   const char *const identifier,
   int limit /* = 5 */,
   int page /* = 1 */
@@ -107,7 +107,7 @@ std::string Ark::Client::API::TWO::Wallets::votes(
     uri,
     sizeof(uri),
     "%s/%s/votes?limit=%d&page=%d",
-    Ark::Client::API::TWO::Paths::Wallets::base,
+    Phantom::Client::API::TWO::Paths::Wallets::base,
     identifier,
     limit,
     page
@@ -117,7 +117,7 @@ std::string Ark::Client::API::TWO::Wallets::votes(
 
 /***/
 
-std::string Ark::Client::API::TWO::Wallets::search(
+std::string Phantom::Client::API::TWO::Wallets::search(
   const std::map<std::string, std::string>& bodyParameters,
   int limit /* = 5 */,
   int page /* = 1 */
@@ -127,7 +127,7 @@ std::string Ark::Client::API::TWO::Wallets::search(
     uri,
     sizeof(uri),
     "%s?limit=%d&page=%d",
-    Ark::Client::API::TWO::Paths::Wallets::search,
+    Phantom::Client::API::TWO::Paths::Wallets::search,
     limit,
     page
   );

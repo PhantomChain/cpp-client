@@ -9,4 +9,4 @@ cmake --build .
 
 # run Gtest
 cd ../../
-./test/Ark-Cpp-Client-tests
+./test/Phantom-Cpp-Client-tests

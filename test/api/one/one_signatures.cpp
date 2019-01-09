@@ -1,11 +1,11 @@
 
 #include "gtest/gtest.h"
-#include "arkClient.h"
+#include "phantomClient.h"
 #include "utils/json.h"
 
 TEST(api, test_one_signature_fees)
 {
-    Ark::Client::Connection<Ark::Client::API::One> connection("5.196.105.32", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::One> connection("5.196.105.32", 4003);
 
     const auto signaturesFeeResponse = connection.api.signatures.fee();
 

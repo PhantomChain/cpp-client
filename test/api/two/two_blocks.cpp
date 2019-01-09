@@ -1,10 +1,10 @@
 
 #include "gtest/gtest.h"
-#include "arkClient.h"
+#include "phantomClient.h"
 #include "utils/json.h"
 
 /* test_two_blocks_block
- * https://dexplorer.ark.io:8443/api/v2/blocks/13114381566690093367
+ * https://dexplorer.phantom.org:8443/api/v2/blocks/13114381566690093367
  * Expected Response:
     {
         "data": {
@@ -38,7 +38,7 @@
  */
 TEST(api, test_two_block)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -110,7 +110,7 @@ TEST(api, test_two_block)
 }
 
 /* test_two_blocks_block_transactions
- * https://dexplorer.ark.io:8443/api/v2/blocks/9269622721511437262/transactions
+ * https://dexplorer.phantom.org:8443/api/v2/blocks/9269622721511437262/transactions
  * Espected Response:
     {
     "meta": {
@@ -145,7 +145,7 @@ TEST(api, test_two_block)
  */
 TEST(api, test_two_block_transactions)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -207,7 +207,7 @@ TEST(api, test_two_block_transactions)
 }
 
 /* test_two_blocks_blocks
- * https://dexplorer.ark.io:8443/api/v2/blocks
+ * https://dexplorer.phantom.org:8443/api/v2/blocks
  * Expected Response:
     {
         "meta": {
@@ -253,7 +253,7 @@ TEST(api, test_two_block_transactions)
  */
 TEST(api, test_two_blocks)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -282,7 +282,7 @@ TEST(api, test_two_blocks)
 }
 
 /* test_two_blocks_blocks_limit_page
- * https://dexplorer.ark.io:8443/api/v2/blocks?limit=10&page=1
+ * https://dexplorer.phantom.org:8443/api/v2/blocks?limit=10&page=1
  * Expected Response:
     {
         "meta": {
@@ -329,7 +329,7 @@ TEST(api, test_two_blocks)
  */
 TEST(api, test_two_blocks_limit_page)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -404,7 +404,7 @@ TEST(api, test_two_blocks_limit_page)
  */
 TEST(api, test_two_blocks_search)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);

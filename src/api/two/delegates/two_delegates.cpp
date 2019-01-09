@@ -3,44 +3,44 @@
 
 #include <cstdio>
 
-std::string Ark::Client::API::TWO::Delegates::get(const char *const identifier)
+std::string Phantom::Client::API::TWO::Delegates::get(const char *const identifier)
 {
   char uri[128] = { };
-  snprintf(uri, sizeof(uri), "%s/%s", Ark::Client::API::TWO::Paths::Delegates::base, identifier);
+  snprintf(uri, sizeof(uri), "%s/%s", Phantom::Client::API::TWO::Paths::Delegates::base, identifier);
   return http_.get(uri);
 }
 
 /***/
 
-std::string Ark::Client::API::TWO::Delegates::all(
+std::string Phantom::Client::API::TWO::Delegates::all(
   int limit /* = 5 */,
   int page /* = 1 */
 ) {
   char uri[128] = { };
-  snprintf(uri, sizeof(uri), "%s?limit=%d&page=%d", Ark::Client::API::TWO::Paths::Delegates::base, limit, page);
+  snprintf(uri, sizeof(uri), "%s?limit=%d&page=%d", Phantom::Client::API::TWO::Paths::Delegates::base, limit, page);
   return http_.get(uri);
 }
 
 /***/
 
-std::string Ark::Client::API::TWO::Delegates::blocks(
+std::string Phantom::Client::API::TWO::Delegates::blocks(
   const char *const identifier,
   int limit /* = 5 */,
   int page /* = 1 */
 ) {
   char uri[128] = { };
-  snprintf(uri, sizeof(uri), "%s/%s/blocks?limit=%d&page=%d", Ark::Client::API::TWO::Paths::Delegates::base, identifier, limit, page);
+  snprintf(uri, sizeof(uri), "%s/%s/blocks?limit=%d&page=%d", Phantom::Client::API::TWO::Paths::Delegates::base, identifier, limit, page);
   return http_.get(uri);
 }
 
 /***/
 
-std::string Ark::Client::API::TWO::Delegates::voters(
+std::string Phantom::Client::API::TWO::Delegates::voters(
   const char *const identifier,
   int limit /* = 5 */,
   int page /* = 1 */
 ) {
   char uri[128] = { };
-  snprintf(uri, sizeof(uri), "%s/%s/voters?limit=%d&page=%d", Ark::Client::API::TWO::Paths::Delegates::base, identifier, limit, page);
+  snprintf(uri, sizeof(uri), "%s/%s/voters?limit=%d&page=%d", Phantom::Client::API::TWO::Paths::Delegates::base, identifier, limit, page);
   return http_.get(uri);
 }

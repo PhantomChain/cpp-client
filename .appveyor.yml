@@ -14,7 +14,7 @@ before_build:
     - cmake -G "Visual Studio 15 2017 Win64" .
 
 build:
-  project: $(APPVEYOR_BUILD_FOLDER)\Ark-Cpp-Client.sln
+  project: $(APPVEYOR_BUILD_FOLDER)\Phantom-Cpp-Client.sln
     
 test_script:
-- cmd: '%APPVEYOR_BUILD_FOLDER%\Bin\%CONFIGURATION%\Ark-Cpp-Client-tests.exe'
+- cmd: '%APPVEYOR_BUILD_FOLDER%\Bin\%CONFIGURATION%\Phantom-Cpp-Client-tests.exe'

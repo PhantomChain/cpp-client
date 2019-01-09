@@ -1,11 +1,11 @@
 
 #include "gtest/gtest.h"
-#include "arkClient.h"
+#include "phantomClient.h"
 #include "utils/json.h"
 
 TEST(api, test_one_loader_autoconfigure)
 {
-    Ark::Client::Connection<Ark::Client::API::One> connection("5.196.105.32", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::One> connection("5.196.105.32", 4003);
 
     const auto autoconfigureResponse = connection.api.loader.autoconfigure();
 
@@ -22,13 +22,13 @@ TEST(api, test_one_loader_autoconfigure)
     ASSERT_STREQ("6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988", nethash); // v1 mainnet nethash
 
     const char* token = network["token"];
-    ASSERT_STREQ("ARK", token);
+    ASSERT_STREQ("XPH", token);
 
     const char* symbol = network["symbol"];
-    ASSERT_STREQ(u8"Ѧ", symbol);
+    ASSERT_STREQ(u8"ⓟ", symbol);
 
     const char* explorer = network["explorer"];
-    ASSERT_STREQ("https://explorer.ark.io", explorer);
+    ASSERT_STREQ("https://explorer.phantom.org", explorer);
 
     int version = network["version"];
     ASSERT_EQ(23, version);
@@ -36,7 +36,7 @@ TEST(api, test_one_loader_autoconfigure)
 
 TEST(api, test_one_loader_status)
 {
-    Ark::Client::Connection<Ark::Client::API::One> connection("5.196.105.32", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::One> connection("5.196.105.32", 4003);
     
     const auto statusResponse = connection.api.loader.status();
 
@@ -58,7 +58,7 @@ TEST(api, test_one_loader_status)
 
 TEST(api, test_one_loader_sync)
 {
-    Ark::Client::Connection<Ark::Client::API::One> connection("5.196.105.32", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::One> connection("5.196.105.32", 4003);
 
     const auto syncResponse = connection.api.loader.sync();
 

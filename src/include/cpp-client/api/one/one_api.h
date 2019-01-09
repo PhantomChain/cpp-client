@@ -1,7 +1,7 @@
 /**
- * This file is part of Ark Cpp Client.
+ * This file is part of Phantom Cpp Client.
  *
- * (c) Ark Ecosystem <info@ark.io>
+ * (c) PhantomChain <info@phantom.org>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -19,20 +19,20 @@
 #include "api/one/signatures/one_signatures.h"
 #include "api/one/transactions/one_transactions.h"
 
-namespace Ark {
+namespace Phantom {
 namespace Client {
 namespace API {
 /**/
 class One : public API::Abstract
 {
 public:
-  Ark::Client::API::ONE::Accounts accounts;
-  Ark::Client::API::ONE::Blocks blocks;
-  Ark::Client::API::ONE::Delegates delegates;
-  Ark::Client::API::ONE::Loader loader;
-  Ark::Client::API::ONE::Peers peers;
-  Ark::Client::API::ONE::Signatures signatures;
-  Ark::Client::API::ONE::Transactions transactions;
+  Phantom::Client::API::ONE::Accounts accounts;
+  Phantom::Client::API::ONE::Blocks blocks;
+  Phantom::Client::API::ONE::Delegates delegates;
+  Phantom::Client::API::ONE::Loader loader;
+  Phantom::Client::API::ONE::Peers peers;
+  Phantom::Client::API::ONE::Signatures signatures;
+  Phantom::Client::API::ONE::Transactions transactions;
         
   One() : Abstract(1), accounts(http_), blocks(http_), delegates(http_), loader(http_), peers(http_), signatures(http_), transactions(http_) { }
 };

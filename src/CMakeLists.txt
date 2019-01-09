@@ -1,7 +1,7 @@
 
 cmake_minimum_required(VERSION 3.2.2)
 
-project(Ark-Cpp-Client-lib)
+project(Phantom-Cpp-Client-lib)
 
 hunter_add_package(CURL)
 find_package(CURL CONFIG REQUIRED)
@@ -30,7 +30,7 @@ set(API_TWO_SRC
 	api/two/wallets/two_wallets.cpp
 )
 
-add_library(Ark-Cpp-Client-lib STATIC
+add_library(Phantom-Cpp-Client-lib STATIC
 	${PLATFORM_SRC}
 	${API_ONE_SRC}
 	${API_TWO_SRC}

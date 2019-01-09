@@ -9,7 +9,7 @@ HunterGate(
     URL "https://github.com/ruslo/hunter/archive/v0.23.29.tar.gz"
     SHA1 "797be99a8a4f4666766257563fad8aa3aa032da2"
 )
-project(Ark-Cpp-Client)
+project(Phantom-Cpp-Client)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 11)

@@ -1,10 +1,10 @@
 
 #include "gtest/gtest.h"
-#include "arkClient.h"
+#include "phantomClient.h"
 #include "utils/json.h"
 
 /* test_two_peers_peer
- * https://dexplorer.ark.io:8443/api/v2/peers/167.114.29.54
+ * https://dexplorer.phantom.org:8443/api/v2/peers/167.114.29.54
  * Expected Response:
     {
     "data": {
@@ -19,7 +19,7 @@
  */
 TEST(api, test_two_peer)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.54", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.54", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -51,7 +51,7 @@ TEST(api, test_two_peer)
 }
 
 /* test_two_peers_peers
- * https://dexplorer.ark.io:8443/api/v2/peers?limit=5&page=1
+ * https://dexplorer.phantom.org:8443/api/v2/peers?limit=5&page=1
  * Expected Response:
     {
     "meta": {
@@ -78,7 +78,7 @@ TEST(api, test_two_peer)
  */
 TEST(api, test_two_peers)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);

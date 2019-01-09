@@ -1,6 +1,6 @@
 
 #include "gtest/gtest.h"
-#include "arkClient.h"
+#include "phantomClient.h"
 #include "utils/json.h"
 
 namespace
@@ -10,7 +10,7 @@ namespace
 
 TEST(api, test_one_transactions_transaction)
 {
-    Ark::Client::Connection<Ark::Client::API::One> connection("5.196.105.32", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::One> connection("5.196.105.32", 4003);
 
     const auto transactionResponse = connection.api.transactions.get(transactionID);
 
@@ -61,7 +61,7 @@ TEST(api, test_one_transactions_transaction)
 
 TEST(api, test_one_transactions_transactions)
 {
-    Ark::Client::Connection<Ark::Client::API::One> connection("5.196.105.32", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::One> connection("5.196.105.32", 4003);
 
     const auto transactionsResponse = connection.api.transactions.all();
 

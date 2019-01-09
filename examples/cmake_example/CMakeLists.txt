@@ -28,5 +28,5 @@ endif()
 set(SOURCE_FILES main.cpp)
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
-target_link_libraries(${PROJECT_NAME} Ark-Cpp-Client-lib)
+target_link_libraries(${PROJECT_NAME} Phantom-Cpp-Client-lib)
 

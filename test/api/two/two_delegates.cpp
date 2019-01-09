@@ -1,10 +1,10 @@
 
 #include "gtest/gtest.h"
-#include "arkClient.h"
+#include "phantomClient.h"
 #include "utils/json.h"
 
 /* test_two_delegates_delegate
- * https://dexplorer.ark.io:8443/api/v2/delegates/boldninja
+ * https://dexplorer.phantom.org:8443/api/v2/delegates/boldninja
  * Expected Response:
     {
         "data": {
@@ -34,7 +34,7 @@
  */
 TEST(api, test_two_delegate)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -81,7 +81,7 @@ TEST(api, test_two_delegate)
 }
 
 /* test_two_delegates_delegate_blocks
- * https://dexplorer.ark.io:8443/api/v2/delegates/boldninja/blocks?limit=3&page=1
+ * https://dexplorer.phantom.org:8443/api/v2/delegates/boldninja/blocks?limit=3&page=1
  * 
  * currently returning:
  *  {
@@ -137,7 +137,7 @@ TEST(api, test_two_delegate)
  */
 TEST(api, test_two_delegate_blocks)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     const auto delegateBlocksResponse = connection.api.delegates.blocks("boldninja", 3, 1);
 
@@ -179,7 +179,7 @@ TEST(api, test_two_delegate_blocks)
 
 
 /* test_two_delegates_delegate_voters
- * https://dexplorer.ark.io:8443/api/v2/delegates/boldninja/voters?limit=5&page=1
+ * https://dexplorer.phantom.org:8443/api/v2/delegates/boldninja/voters?limit=5&page=1
  * Expected Response:
     {
     "meta": {
@@ -205,7 +205,7 @@ TEST(api, test_two_delegate_blocks)
  */
 TEST(api, test_two_delegate_voters)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);
@@ -240,7 +240,7 @@ TEST(api, test_two_delegate_voters)
 }
 
 /* test_two_delegates_delegates
- * https://dexplorer.ark.io:8443/api/v2/delegates?limit=5&page=1
+ * https://dexplorer.phantom.org:8443/api/v2/delegates?limit=5&page=1
  * Expected Response:
     {
     "meta": {
@@ -282,7 +282,7 @@ TEST(api, test_two_delegate_voters)
  */
 TEST(api, test_two_delegates)
 {
-    Ark::Client::Connection<Ark::Client::API::Two> connection("167.114.29.55", 4003);
+    Phantom::Client::Connection<Phantom::Client::API::Two> connection("167.114.29.55", 4003);
 
     auto apiVersion = connection.api.version();
     ASSERT_EQ(2, apiVersion);

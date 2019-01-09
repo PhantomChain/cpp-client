@@ -7,7 +7,7 @@
  * /api/delegates/get?username="username"
  * /api/delegates/get?publicKey=publicKey
  **/
-std::string Ark::Client::API::ONE::Delegates::get(
+std::string Phantom::Client::API::ONE::Delegates::get(
     const char *const parameter
 ) {
   char uri[128] = { };
@@ -17,7 +17,7 @@ std::string Ark::Client::API::ONE::Delegates::get(
     uri,
     sizeof(uri),
     "%s%s%s",
-    Ark::Client::API::ONE::Paths::Delegates::get,
+    Phantom::Client::API::ONE::Paths::Delegates::get,
     isUsername ? "?username=" : "?publicKey=",
     parameter
   );
@@ -30,10 +30,10 @@ std::string Ark::Client::API::ONE::Delegates::get(
 /**
  * /api/delegates?limit=20
  **/
-std::string Ark::Client::API::ONE::Delegates::all(int limit)
+std::string Phantom::Client::API::ONE::Delegates::all(int limit)
 {
   char uri[32] = { };
-  snprintf(uri, sizeof(uri), "%s?limit=%d", Ark::Client::API::ONE::Paths::Delegates::base, limit);
+  snprintf(uri, sizeof(uri), "%s?limit=%d", Phantom::Client::API::ONE::Paths::Delegates::base, limit);
   return http_.get(uri);
 }
 /**/
@@ -43,9 +43,9 @@ std::string Ark::Client::API::ONE::Delegates::all(int limit)
 /**
  * /api/delegates/count
  **/
-std::string Ark::Client::API::ONE::Delegates::count()
+std::string Phantom::Client::API::ONE::Delegates::count()
 {
-  return http_.get(Ark::Client::API::ONE::Paths::Delegates::count);
+  return http_.get(Phantom::Client::API::ONE::Paths::Delegates::count);
 }
 /**/
 
@@ -54,11 +54,11 @@ std::string Ark::Client::API::ONE::Delegates::count()
 /**
  * /api/delegates/search?q=sleepdeficit 
  **/
-std::string Ark::Client::API::ONE::Delegates::search(
+std::string Phantom::Client::API::ONE::Delegates::search(
     const char *const username)
 {
   char uri[69 + 1] = { };
-  snprintf(uri, sizeof(uri), "%s?q=%s", Ark::Client::API::ONE::Paths::Delegates::search, username);
+  snprintf(uri, sizeof(uri), "%s?q=%s", Phantom::Client::API::ONE::Paths::Delegates::search, username);
   return http_.get(uri);
 }
 /**/
@@ -68,9 +68,9 @@ std::string Ark::Client::API::ONE::Delegates::search(
 /**
  * /api/delegates/fee
  **/
-std::string Ark::Client::API::ONE::Delegates::fee()
+std::string Phantom::Client::API::ONE::Delegates::fee()
 {
-  return http_.get(Ark::Client::API::ONE::Paths::Delegates::fee);
+  return http_.get(Phantom::Client::API::ONE::Paths::Delegates::fee);
 }
 /**/
 
@@ -79,10 +79,10 @@ std::string Ark::Client::API::ONE::Delegates::fee()
 /**
  * /api/delegates/forging/getForgedByAccount?generatorPublicKey=_genPubkey
  **/
-std::string Ark::Client::API::ONE::Delegates::forgedByAccount(const char *const generatorPublicKey)
+std::string Phantom::Client::API::ONE::Delegates::forgedByAccount(const char *const generatorPublicKey)
 {
   char uri[152 + 1] = { };
-  snprintf(uri, sizeof(uri), "%s?generatorPublicKey=%s", Ark::Client::API::ONE::Paths::Delegates::forgedByAccount, generatorPublicKey);
+  snprintf(uri, sizeof(uri), "%s?generatorPublicKey=%s", Phantom::Client::API::ONE::Paths::Delegates::forgedByAccount, generatorPublicKey);
   return http_.get(uri);
 }
 /**/
@@ -92,9 +92,9 @@ std::string Ark::Client::API::ONE::Delegates::forgedByAccount(const char *const 
 /**
  * /api/delegates/getNextForgers
  **/
-std::string Ark::Client::API::ONE::Delegates::nextForgers()
+std::string Phantom::Client::API::ONE::Delegates::nextForgers()
 {
-  return http_.get(Ark::Client::API::ONE::Paths::Delegates::nextForgers);
+  return http_.get(Phantom::Client::API::ONE::Paths::Delegates::nextForgers);
 }
 /**/
 
@@ -103,11 +103,11 @@ std::string Ark::Client::API::ONE::Delegates::nextForgers()
 /**
  * /api/delegates/voters?publicKey=_pubKey
  **/
-std::string Ark::Client::API::ONE::Delegates::voters(
+std::string Phantom::Client::API::ONE::Delegates::voters(
     const char *const publicKey)
 {
   char uri[123 + 1] = { };
-  snprintf(uri, sizeof(uri), "%s?publicKey=%s", Ark::Client::API::ONE::Paths::Delegates::voters, publicKey);
+  snprintf(uri, sizeof(uri), "%s?publicKey=%s", Phantom::Client::API::ONE::Paths::Delegates::voters, publicKey);
   return http_.get(uri);
 }
 /**/

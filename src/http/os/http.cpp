@@ -10,7 +10,7 @@
 #include <sstream>
 #include <iostream>
 
-namespace Ark {
+namespace Phantom {
 namespace Client {
 namespace {
 
@@ -46,7 +46,7 @@ class PlatformHTTP : public AbstractHTTP
 
                 header_list = curl_slist_append(header_list, "Content-Type: application/json");
                 header_list = curl_slist_append(header_list, "API-Version: 1");
-                header_list = curl_slist_append(header_list, "Accept: application/vnd.ark.core-api.v1+json");
+                header_list = curl_slist_append(header_list, "Accept: application/vnd.phantom.core-api.v1+json");
                 //header_list = curl_slist_append(header_list, "Accept: application/json");
 
                 curl_easy_setopt(curl, CURLOPT_HTTPHEADER, header_list);

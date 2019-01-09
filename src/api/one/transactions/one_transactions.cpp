@@ -6,10 +6,10 @@
 /**
  * /api/transactions/get?id=
  **/
-std::string Ark::Client::API::ONE::Transactions::get(const char *const id)
+std::string Phantom::Client::API::ONE::Transactions::get(const char *const id)
 {
   char uri[114 + 1] = { };
-  snprintf(uri, sizeof(uri), "%s?id=%s", Ark::Client::API::ONE::Paths::Transactions::get, id);
+  snprintf(uri, sizeof(uri), "%s?id=%s", Phantom::Client::API::ONE::Paths::Transactions::get, id);
   return http_.get(uri);
 }
 /**/
@@ -19,7 +19,7 @@ std::string Ark::Client::API::ONE::Transactions::get(const char *const id)
 /**
  * /api/transactions/?orderBy=timestamp:desc&limit=10"
  **/
-std::string Ark::Client::API::ONE::Transactions::all(
+std::string Phantom::Client::API::ONE::Transactions::all(
         int limit,
         const char *const orderBy,
         bool isDescending
@@ -29,7 +29,7 @@ std::string Ark::Client::API::ONE::Transactions::all(
     uri,
     sizeof(uri),
     "%s?orderBy=%s:%s&limit=%d",
-    Ark::Client::API::ONE::Paths::Transactions::base,
+    Phantom::Client::API::ONE::Paths::Transactions::base,
     orderBy,
     isDescending ? "desc" : "asc",
     limit
@@ -43,10 +43,10 @@ std::string Ark::Client::API::ONE::Transactions::all(
 /**
  * /api/transactions/unconfirmed/get?id=
  **/
-std::string Ark::Client::API::ONE::Transactions::getUnconfirmed(const char *const id)
+std::string Phantom::Client::API::ONE::Transactions::getUnconfirmed(const char *const id)
 {
   char uri[126 + 1] = { };
-  snprintf(uri, sizeof(uri), "%s?id=%s", Ark::Client::API::ONE::Paths::Transactions::getUnconfirmed, id);
+  snprintf(uri, sizeof(uri), "%s?id=%s", Phantom::Client::API::ONE::Paths::Transactions::getUnconfirmed, id);
   return http_.get(uri);
 }
 /**/
@@ -56,8 +56,8 @@ std::string Ark::Client::API::ONE::Transactions::getUnconfirmed(const char *cons
 /**
  * /api/transactions/unconfirmed
  **/
-std::string Ark::Client::API::ONE::Transactions::allUnconfirmed()
+std::string Phantom::Client::API::ONE::Transactions::allUnconfirmed()
 {
-  return http_.get(Ark::Client::API::ONE::Paths::Transactions::allUnconfirmed);
+  return http_.get(Phantom::Client::API::ONE::Paths::Transactions::allUnconfirmed);
 }
 /**/
