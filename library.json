@@ -1,6 +1,6 @@
 {
   "name": "Phantom-Cpp-Client",
-  "keywords": "phantom, crypto, blockchain, arduino",
+  "keywords": "phantom, phantomchain, crypto, blockchain, arduino",
   "description": "Cpp Wrapper for the PhantomChain",
   "homepage": "https://github.com/PhantomChain/Cpp-Client",
   "repository": {
